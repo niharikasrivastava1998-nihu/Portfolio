@@ -1,0 +1,137 @@
+/* =============================================
+   COMPONENTS — Buttons, Cards, Glass Effects
+   ============================================= */
+
+/* ----- Glass Card ----- */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.glass-card:hover {
+  background: var(--glass-border);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ----- Buttons ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-2xl);
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border-radius: var(--radius-full);
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+}
+
+.btn-outline:hover {
+  background: var(--glass-bg);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-submit {
+  width: 100%;
+  justify-content: center;
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: var(--text-base);
+}
+
+/* ----- Custom Cursor ----- */
+.custom-cursor {
+  display: none;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.custom-cursor.hovering .cursor-ring {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: -30px;
+  border-color: rgba(232, 180, 77, 0.5);
+}
+
+.custom-cursor.hovering .cursor-dot {
+  transform: scale(1.5);
+  background: var(--color-gold);
+}
+
+/* ----- Reveal Text Animation ----- */
+.reveal-text {
+  overflow: hidden;
+}
+
+.reveal-text > * {
+  display: inline-block;
+}
+
+/* ----- Split Text ----- */
+.split-text .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+}

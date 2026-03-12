@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Niharika Srivastava portrait placeholder</title>
+  <desc id="desc">A premium abstract portrait placeholder with a dark cosmic background, warm gold accents, and the initials NS.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#090d1d"/>
+      <stop offset="55%" stop-color="#111935"/>
+      <stop offset="100%" stop-color="#20142a"/>
+    </linearGradient>
+    <linearGradient id="halo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5d063" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff6b35" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="1200" fill="url(#bg)"/>
+  <circle cx="690" cy="220" r="180" fill="#1a237e" opacity="0.28" filter="url(#blur)"/>
+  <circle cx="250" cy="940" r="220" fill="#d4af37" opacity="0.12" filter="url(#blur)"/>
+  <circle cx="470" cy="390" r="250" fill="url(#halo)" opacity="0.26" filter="url(#blur)"/>
+
+  <rect x="110" y="120" width="680" height="960" rx="48" fill="url(#glass)" stroke="#f5d063" stroke-opacity="0.35"/>
+
+  <circle cx="450" cy="390" r="155" fill="#f2d6b7" opacity="0.9"/>
+  <path d="M308 536c31-98 108-157 142-169 34 12 111 71 142 169v85H308z" fill="#1b0f19"/>
+  <path d="M306 370c16-120 116-206 144-206 28 0 128 86 144 206-48-47-88-69-144-69s-96 22-144 69z" fill="#130a13"/>
+  <path d="M244 1080c24-210 110-313 206-313s182 103 206 313z" fill="#0e162f"/>
+  <path d="M318 773c47 54 86 80 132 80s85-26 132-80c-19 93-74 144-132 144s-113-51-132-144z" fill="#c89380" opacity="0.56"/>
+
+  <circle cx="292" cy="277" r="4" fill="#f5d063" opacity="0.8"/>
+  <circle cx="646" cy="320" r="6" fill="#ffffff" opacity="0.7"/>
+  <circle cx="220" cy="480" r="3" fill="#f5d063" opacity="0.7"/>
+  <circle cx="718" cy="760" r="5" fill="#ffffff" opacity="0.55"/>
+  <circle cx="180" cy="930" r="4" fill="#f5d063" opacity="0.6"/>
+
+  <g transform="translate(450 1010)">
+    <rect x="-118" y="-42" width="236" height="84" rx="42" fill="#0b1124" opacity="0.72" stroke="#d4af37" stroke-opacity="0.36"/>
+    <text x="0" y="12" text-anchor="middle" fill="#f5d063" font-family="Playfair Display, serif" font-size="44" letter-spacing="8">NS</text>
+  </g>
+</svg>
