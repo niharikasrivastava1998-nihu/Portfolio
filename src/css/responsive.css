@@ -421,9 +421,9 @@
   }
 
   .scroll-indicator {
-    position: absolute;
-    transform: translateX(-50%);
-    margin-top: 0;
+    position: relative;
+    transform: none;
+    margin-top: 0.85rem;
   }
 
   .book-actions {

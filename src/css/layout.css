@@ -184,8 +184,10 @@ body.nav-open .nav-backdrop {
 .hero {
   min-height: 100svh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: clamp(0.9rem, 2vw, 1.6rem);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -348,14 +350,13 @@ body.nav-open .nav-backdrop {
 
 /* ----- Scroll Indicator ----- */
 .scroll-indicator {
-  position: absolute;
-  bottom: var(--space-3xl);
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-sm);
+  margin-top: 0.55rem;
   color: var(--text-muted);
   cursor: default;
 }
