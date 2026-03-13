@@ -53,26 +53,26 @@
   --font-body: 'Inter', -apple-system, sans-serif;
   --font-accent: 'Space Grotesk', monospace;
 
-  --text-xs: clamp(0.7rem, 0.8vw, 0.75rem);
-  --text-sm: clamp(0.8rem, 0.9vw, 0.875rem);
-  --text-base: clamp(0.9rem, 1vw, 1rem);
-  --text-lg: clamp(1.05rem, 1.2vw, 1.125rem);
-  --text-xl: clamp(1.2rem, 1.4vw, 1.25rem);
-  --text-2xl: clamp(1.5rem, 2vw, 1.75rem);
-  --text-3xl: clamp(1.8rem, 2.5vw, 2.25rem);
-  --text-4xl: clamp(2.2rem, 3.5vw, 3rem);
-  --text-5xl: clamp(3rem, 5vw, 4.5rem);
+  --text-xs: clamp(0.72rem, 0.72rem + 0.12vw, 0.78rem);
+  --text-sm: clamp(0.86rem, 0.82rem + 0.2vw, 0.95rem);
+  --text-base: clamp(0.98rem, 0.92rem + 0.22vw, 1.08rem);
+  --text-lg: clamp(1.08rem, 1rem + 0.45vw, 1.28rem);
+  --text-xl: clamp(1.28rem, 1.12rem + 0.72vw, 1.6rem);
+  --text-2xl: clamp(1.65rem, 1.3rem + 1.15vw, 2.2rem);
+  --text-3xl: clamp(2rem, 1.45rem + 1.9vw, 3.1rem);
+  --text-4xl: clamp(2.7rem, 2rem + 3vw, 4.7rem);
+  --text-5xl: clamp(3.3rem, 2.2rem + 5vw, 6.5rem);
 
   /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
+  --space-xs: 0.3rem;
+  --space-sm: 0.6rem;
   --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
-  --space-4xl: 6rem;
-  --space-section: 5rem;
+  --space-lg: 1.35rem;
+  --space-xl: 1.8rem;
+  --space-2xl: clamp(2rem, 4vw, 3rem);
+  --space-3xl: clamp(3rem, 6vw, 4.5rem);
+  --space-4xl: clamp(4rem, 9vw, 6.5rem);
+  --space-section: clamp(4.5rem, 9vw, 7rem);
 
   /* Border Radius */
   --radius-sm: 8px;
@@ -107,11 +107,16 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: rgba(212, 175, 55, 0.3) transparent;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 112px;
 }
 
 body {
   font-family: var(--font-body);
+  background:
+    radial-gradient(circle at top center, rgba(99, 102, 241, 0.18), transparent 34%),
+    radial-gradient(circle at 82% 18%, rgba(236, 72, 153, 0.12), transparent 24%),
+    radial-gradient(circle at 20% 88%, rgba(245, 208, 99, 0.08), transparent 26%),
+    linear-gradient(180deg, #040712 0%, #090d21 48%, #070a16 100%);
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.7;
@@ -119,6 +124,7 @@ body {
   cursor: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 ::-webkit-scrollbar {
@@ -136,6 +142,7 @@ a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -144,6 +151,7 @@ button {
   border: none;
   color: inherit;
   font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -169,9 +177,9 @@ input, textarea {
 
 /* ----- Utility ----- */
 .container {
-  max-width: 1200px;
+  width: min(100%, 1200px);
   margin: 0 auto;
-  padding: 0 var(--space-xl);
+  padding: 0 clamp(1rem, 4vw, 2rem);
 }
 
 .section {
@@ -184,14 +192,17 @@ input, textarea {
 
 /* ----- Section Header ----- */
 .section-header {
-  margin-bottom: var(--space-4xl);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: clamp(2rem, 6vw, 4rem);
+  max-width: min(100%, 44rem);
 }
 
 .section-header-center {
   text-align: center;
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  margin-inline: auto;
 }
 
 .section-label {
@@ -211,11 +222,13 @@ input, textarea {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.15;
+  text-wrap: balance;
 }
 
 .section-subtitle {
   font-size: var(--text-base);
   color: var(--text-secondary);
   margin-top: var(--space-md);
-  max-width: 500px;
+  max-width: 38rem;
+  text-wrap: pretty;
 }
