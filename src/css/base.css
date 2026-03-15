@@ -3,12 +3,13 @@
    Niharika's "Luminous Flow" V2
    ============================================= */
 
-/* ----- Color System ----- */
+/* ----- Color System — 2026 Refresh ----- */
 :root {
-  /* Background */
-  --bg-primary: #0a0a12;
-  --bg-secondary: #0f0f1a;
-  --bg-tertiary: #141422;
+  /* Background — Deep Navy (NOT black) */
+  --bg-primary: #0c1220;
+  --bg-secondary: #111827;
+  --bg-tertiary: #151d2e;
+  --bg-elevated: #1a2332;
 
   /* Spiritual Palette */
   --color-saffron: #FF6B35;
@@ -28,10 +29,10 @@
   --color-teal: #0D9488;
   --color-sage: #68D4A5;
 
-  /* Text */
-  --text-primary: #F8F8F2;
-  --text-secondary: rgba(248, 248, 242, 0.65);
-  --text-muted: rgba(248, 248, 242, 0.4);
+  /* Text — warmer whites */
+  --text-primary: #F0EDE6;
+  --text-secondary: rgba(240, 237, 230, 0.62);
+  --text-muted: rgba(240, 237, 230, 0.38);
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, var(--color-indigo), var(--color-violet), var(--color-rose));
@@ -40,15 +41,15 @@
   --gradient-spiritual: linear-gradient(135deg, var(--color-neelkanth-blue), var(--color-indigo), var(--color-violet));
   --gradient-book: linear-gradient(135deg, #FF6B35, #D4AF37, #F5D063, #FF6B35);
 
-  /* Glass */
-  --glass-bg: rgba(255, 255, 255, 0.04);
-  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  /* Glass — slightly warmer tints */
+  --glass-bg: rgba(255, 255, 255, 0.035);
+  --glass-bg-hover: rgba(255, 255, 255, 0.07);
   --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-border-gold: rgba(212, 175, 55, 0.2);
+  --glass-border-gold: rgba(212, 175, 55, 0.18);
   --glass-blur: blur(20px);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 
-  /* Typography */
+  /* Typography — Modern hierarchy */
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, sans-serif;
   --font-accent: 'Space Grotesk', monospace;
@@ -113,10 +114,10 @@ html {
 body {
   font-family: var(--font-body);
   background:
-    radial-gradient(circle at top center, rgba(99, 102, 241, 0.18), transparent 34%),
-    radial-gradient(circle at 82% 18%, rgba(236, 72, 153, 0.12), transparent 24%),
-    radial-gradient(circle at 20% 88%, rgba(245, 208, 99, 0.08), transparent 26%),
-    linear-gradient(180deg, #040712 0%, #090d21 48%, #070a16 100%);
+    radial-gradient(circle at top center, rgba(99, 102, 241, 0.10), transparent 40%),
+    radial-gradient(circle at 82% 18%, rgba(139, 92, 246, 0.06), transparent 30%),
+    radial-gradient(circle at 20% 88%, rgba(212, 175, 55, 0.04), transparent 30%),
+    linear-gradient(180deg, #0c1220 0%, #101a2b 50%, #0c1220 100%);
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.7;
@@ -216,13 +217,11 @@ input, textarea {
 }
 
 .section-title {
-  font-size: var(--text-5xl);
-  background: var(--gradient-primary);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: var(--text-4xl);
+  color: var(--text-primary);
   line-height: 1.15;
   text-wrap: balance;
+  letter-spacing: -0.02em;
 }
 
 .section-subtitle {

@@ -3,6 +3,8 @@
    Niharika's "Luminous Flow" Portfolio
    ============================================= */
 
+import { HeroEffect } from './js/hero-effect.js';
+
 // ===== WAIT FOR GSAP =====
 const ANIMATED_ELEMENT_SELECTORS = [
   '.hero-greeting-line',
@@ -1761,6 +1763,7 @@ async function init() {
   new SmoothScroll();
   new CosmosGame();
   new EasterEggs();
+  new HeroEffect();
 
   if (hasConstrainedDevice()) {
     clearAnimatedInlineState();

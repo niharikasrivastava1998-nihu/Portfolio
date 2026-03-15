@@ -1,0 +1,212 @@
+/* =============================================
+   HERO EFFECT — Glass Blob Reveal
+   2-layer portrait: base + reveal through glass blob
+   ============================================= */
+
+/* ===== HERO 2-COL LAYOUT ===== */
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-align: left;
+  gap: clamp(2rem, 4vw, 4rem);
+  max-width: 1200px;
+}
+
+.hero-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+  z-index: 3;
+}
+
+.hero-portrait-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* ===== PORTRAIT ===== */
+.hero-portrait {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 3 / 4;
+  margin: 0 auto;
+  perspective: 1000px;
+  cursor: crosshair;
+}
+
+.hero-portrait-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.hero-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  filter: brightness(1.02) contrast(1.05);
+}
+
+/* Vignette */
+.hero-portrait-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgba(10, 10, 18, 0.45) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+/* Glow ring */
+.hero-portrait::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 27px;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.4),
+    rgba(99, 102, 241, 0.3),
+    rgba(236, 72, 153, 0.3),
+    rgba(212, 175, 55, 0.4)
+  );
+  background-size: 300% 300%;
+  animation: portraitGlowShift 6s ease-in-out infinite;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(8px);
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.hero-portrait:hover::before {
+  opacity: 1;
+  filter: blur(14px);
+}
+
+@keyframes portraitGlowShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Hover hint — desktop only */
+.hero-portrait-hint {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-accent);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hero-portrait:hover .hero-portrait-hint {
+  opacity: 0;
+}
+
+/* Scanline — not used in glass blob */
+.hero-portrait-scanline {
+  display: none;
+}
+
+/* ===== TEXT ALIGNMENT FOR 2-COL ===== */
+.hero .hero-tagline { justify-content: flex-start; }
+.hero .hero-description { text-align: left; margin: 0; }
+.hero .hero-highlights { justify-content: flex-start; }
+.hero .hero-cta { justify-content: flex-start; }
+.hero .hero-name { align-items: flex-start; }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.2rem;
+  }
+
+  .hero-text-col {
+    align-items: center;
+    order: 2;
+  }
+
+  .hero-portrait-col {
+    order: 1;
+    max-width: 320px;
+    width: 75vw;
+    margin: 0 auto;
+  }
+
+  .hero-portrait {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .hero-portrait-inner {
+    border-radius: 20px;
+  }
+
+  .hero-portrait::before {
+    border-radius: 23px;
+    inset: -2px;
+    filter: blur(6px);
+  }
+
+  /* Disable glow animation on mobile for perf */
+  .hero-portrait::before {
+    animation: none;
+    background-size: 100% 100%;
+  }
+
+  .hero .hero-tagline { justify-content: center; }
+  .hero .hero-description { text-align: center; margin: 0 auto; }
+  .hero .hero-highlights { justify-content: center; }
+  .hero .hero-cta { justify-content: center; }
+  .hero .hero-name { align-items: center; }
+
+  /* Hide hover hint on mobile — touch has its own UX */
+  .hero-portrait-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-portrait-col {
+    max-width: 280px;
+    width: 70vw;
+  }
+
+  .hero-portrait {
+    max-width: 280px;
+  }
+
+  .hero-portrait-inner {
+    border-radius: 18px;
+  }
+
+  .hero-portrait::before {
+    border-radius: 21px;
+  }
+}

@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="./src/css/components.css" />
   <link rel="stylesheet" href="./src/css/animations.css" />
   <link rel="stylesheet" href="./src/css/responsive.css" />
+  <link rel="stylesheet" href="./src/css/hero-effect.css" />
 
  </head>
 <body>
@@ -69,32 +70,49 @@
   <section class="section hero" id="hero">
     <div class="hero-gradient-mesh" data-speed="0.18"></div>
     <div class="hero-content">
-      <div class="hero-greeting reveal-text">
-        <span class="hero-greeting-line">Hello, I'm</span>
+      <!-- Left: Text Column -->
+      <div class="hero-text-col">
+        <div class="hero-greeting reveal-text">
+          <span class="hero-greeting-line">Hello, I'm</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="hero-name-line" data-text="Niharika">Niharika</span>
+          <span class="hero-name-line hero-name-last" data-text="Srivastava">Srivastava</span>
+        </h1>
+        <div class="hero-tagline">
+          <span class="tagline-word">Writer</span>
+          <span class="tagline-dot">·</span>
+          <span class="tagline-word">Communications Strategist</span>
+          <span class="tagline-dot">·</span>
+          <span class="tagline-word">Published Author</span>
+        </div>
+        <p class="hero-description">
+          I build content that sounds human, earns trust, and moves people to act.<br/>
+          Part writer, part strategist, part seeker of depth in a world full of noise.
+        </p>
+        <div class="hero-highlights">
+          <span class="hero-note glass-card">1M+ community reach</span>
+          <span class="hero-note glass-card">Published author</span>
+          <span class="hero-note glass-card">Editorial + brand strategy</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#journal" class="btn btn-primary">Read My Voice</a>
+          <a href="#connect" class="btn btn-outline">Work With Me</a>
+        </div>
       </div>
-      <h1 class="hero-name">
-        <span class="hero-name-line" data-text="Niharika">Niharika</span>
-        <span class="hero-name-line hero-name-last" data-text="Srivastava">Srivastava</span>
-      </h1>
-      <div class="hero-tagline">
-        <span class="tagline-word">Writer</span>
-        <span class="tagline-dot">·</span>
-        <span class="tagline-word">Communications Strategist</span>
-        <span class="tagline-dot">·</span>
-        <span class="tagline-word">Published Author</span>
-      </div>
-      <p class="hero-description">
-        I build content that sounds human, earns trust, and moves people to act.<br/>
-        Part writer, part strategist, part seeker of depth in a world full of noise.
-      </p>
-      <div class="hero-highlights">
-        <span class="hero-note glass-card">1M+ community reach</span>
-        <span class="hero-note glass-card">Published author</span>
-        <span class="hero-note glass-card">Editorial + brand strategy</span>
-      </div>
-      <div class="hero-cta">
-        <a href="#journal" class="btn btn-primary">Read My Voice</a>
-        <a href="#connect" class="btn btn-outline">Work With Me</a>
+      <!-- Right: Interactive Portrait Column -->
+      <div class="hero-portrait-col">
+        <div class="hero-portrait" id="heroPortrait">
+          <div class="hero-portrait-inner" id="heroPortraitInner">
+            <img
+              src="./images/niharika-hero-closeup.png"
+              alt="Niharika Srivastava — Writer & Communications Strategist"
+              class="hero-portrait-img"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
       </div>
     </div>
     <div class="scroll-indicator" id="scrollIndicator">
