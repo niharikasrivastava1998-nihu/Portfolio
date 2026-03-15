@@ -7,10 +7,10 @@
 @media (max-width: 767px) {
   :root {
     --glass-blur: blur(10px);
-    /* Tighter spacing on mobile */
-    --space-section: clamp(2rem, 5vw, 3rem);
-    --space-3xl: clamp(1.5rem, 3.5vw, 2.2rem);
-    --space-4xl: clamp(2rem, 5vw, 3rem);
+    /* Breathing room on mobile — NOT cramped */
+    --space-section: clamp(3rem, 7vw, 4.5rem);
+    --space-3xl: clamp(2rem, 4.5vw, 3rem);
+    --space-4xl: clamp(2.5rem, 6vw, 3.5rem);
   }
 
   body.nav-open {
@@ -93,8 +93,8 @@
   /* ===== HERO ===== */
   .hero {
     min-height: auto;
-    padding-top: calc(env(safe-area-inset-top, 0px) + 6rem);
-    padding-bottom: 1.5rem;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 4.5rem);
+    padding-bottom: 2rem;
   }
 
   .hero::before {
@@ -118,8 +118,8 @@
   }
 
   .hero-content {
-    padding: 0 0.8rem;
-    gap: 0.5rem;
+    padding: 0 1.25rem;
+    gap: 0.8rem;
   }
 
   .hero-name-line {
@@ -168,8 +168,8 @@
   .hero-cta {
     flex-direction: column;
     width: 100%;
-    gap: 0.5rem;
-    margin-top: 0.3rem;
+    gap: 0.7rem;
+    margin-top: 0.6rem;
   }
 
   .hero-cta .btn {
@@ -184,29 +184,29 @@
     margin-top: 0.5rem;
   }
 
-  /* ===== SECTIONS — Tight, clean mobile spacing ===== */
+  /* ===== SECTIONS — Breathing room, not cramped ===== */
   .section {
     padding: var(--space-section) 0;
   }
 
   .section-header {
-    margin-bottom: clamp(1rem, 3.5vw, 1.8rem);
+    margin-bottom: clamp(1.5rem, 4.5vw, 2.2rem);
   }
 
   .section-title {
-    font-size: clamp(1.6rem, 6.5vw, 2.4rem);
+    font-size: clamp(1.7rem, 7vw, 2.6rem);
     line-height: 1.15;
   }
 
   .section-label {
     font-size: 0.65rem;
     letter-spacing: 0.15em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
   }
 
   .section-subtitle {
     font-size: 0.88rem;
-    margin-top: 0.4rem;
+    margin-top: 0.6rem;
   }
 
   .section-bg-pattern {
@@ -217,7 +217,7 @@
   }
 
   .container {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
   }
 
   /* ===== ABOUT ===== */
@@ -225,7 +225,7 @@
   .book-showcase,
   .projects-bento,
   .connect-grid {
-    gap: 0.8rem;
+    gap: 1.5rem;
   }
 
   .about-signature,
@@ -235,26 +235,36 @@
   .connect-form,
   .award-card,
   .timeline-card {
-    padding: 0.9rem;
+    padding: 1.1rem;
   }
 
   .about-intro {
     font-size: var(--text-base);
-    line-height: 1.7;
+    line-height: 1.75;
+    margin-bottom: 0.5rem;
   }
 
   .about-body {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    margin-bottom: 0.8rem;
   }
 
   .about-image-frame {
     border-radius: 18px;
   }
 
-  /* Stats: compact layout — number+suffix inline */
+  /* Cap about photo height so it doesn't dominate */
+  .about-photo {
+    max-height: 420px;
+    object-fit: cover;
+  }
+
+  /* Stats: clean inline layout with breathing room */
   .about-stats {
     grid-template-columns: 1fr;
-    gap: 0.6rem;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
   }
 
   .stat-card {
@@ -263,7 +273,7 @@
     align-items: baseline;
     gap: 0 0.15rem;
     text-align: left;
-    padding: 0.8rem 1rem;
+    padding: 1rem 1.2rem;
   }
 
   .stat-number,
@@ -273,9 +283,8 @@
 
   .stat-label {
     width: 100%;
-    margin-top: 0.15rem;
+    margin-top: 0.2rem;
   }
-
 
   .skills-tags {
     gap: 0.4rem;
@@ -286,17 +295,20 @@
     padding: 0.2rem 0.6rem;
   }
 
-  /* Work principles */
+  /* Work principles — breathing room */
   .work-principle {
-    padding: 0.9rem;
+    padding: 1.1rem;
+    margin-bottom: 0.3rem;
   }
 
   .work-principle-title {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
+    margin-bottom: 0.5rem;
   }
 
   .work-principle p {
-    font-size: 0.82rem;
+    font-size: 0.88rem;
+    line-height: 1.65;
   }
 
   /* ===== TIMELINE ===== */
